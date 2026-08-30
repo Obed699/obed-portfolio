@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Obed — Graphic Designer Portfolio">
+<title>OBED — Graphic Designer</title>
+<style>
+:root{--bg:#0b0b0d;--card:#141418;--text:#f5f5f5;--muted:#a5a5ad;--line:#29292f;--accent:#b7ff3c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;width:100%;z-index:10;background:rgba(11,11,13,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:2px;font-size:1.15rem}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;color:#ccc;font-size:.92rem}
+.nav-links a:hover{color:var(--accent)}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:72px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:520px;height:520px;background:var(--accent);filter:blur(160px);opacity:.08;right:-180px;top:80px}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:3px;text-transform:uppercase;font-size:.78rem;margin-bottom:20px}
+h1{font-size:clamp(3.4rem,9vw,7.8rem);line-height:.9;letter-spacing:-.07em;max-width:900px}
+h1 span{color:transparent;-webkit-text-stroke:1px #eee}
+.hero p{max-width:650px;color:var(--muted);font-size:1.08rem;margin:28px 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:13px 20px;border:1px solid var(--line);border-radius:999px;font-weight:700;transition:.25s}
+.btn.primary{background:var(--accent);color:#0b0b0d;border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+section{padding:110px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:40px}
+.eyebrow{color:var(--accent);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+h2{font-size:clamp(2rem,5vw,4rem);letter-spacing:-.05em;line-height:1}
+.section-head p{color:var(--muted);max-width:430px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.3s}
+.project:hover{transform:translateY(-6px);border-color:#444}
+.project-art{height:300px;display:grid;place-items:center;position:relative;overflow:hidden}
+.project-art.one{background:linear-gradient(135deg,#17171b,#35353c)}
+.project-art.two{background:linear-gradient(135deg,#20170d,#5a3a17)}
+.project-art.three{background:linear-gradient(135deg,#0d1718,#183d3b)}
+.project-art.four{background:linear-gradient(135deg,#171019,#422044)}
+.project-art:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--accent);opacity:.15;filter:blur(8px)}
+.mock{font-size:5rem;font-weight:950;letter-spacing:-.08em;z-index:1}
+.project-info{padding:22px}.project-info h3{font-size:1.3rem}.project-info p{color:var(--muted);font-size:.9rem}
+.services{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.service{padding:30px 22px;border-right:1px solid var(--line)}.service:last-child{border-right:0}
+.service b{display:block;font-size:1.1rem;margin-bottom:10px}.service p{color:var(--muted);font-size:.88rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.about p{color:var(--muted);font-size:1.05rem}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+.fact{padding:20px;background:var(--card);border:1px solid var(--line);border-radius:15px}.fact strong{display:block;font-size:1.4rem}.fact span{color:var(--muted);font-size:.82rem}
+.skills{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.tag{border:1px solid var(--line);padding:9px 13px;border-radius:999px;color:#ccc}
+.contact{background:var(--accent);color:#0b0b0d;border-radius:30px;padding:65px}
+.contact h2{max-width:700px}.contact p{max-width:600px;margin:18px 0 28px}
+.contact .btn{border-color:#0b0b0d}.contact .btn.primary{background:#0b0b0d;color:#fff}
+footer{padding:35px 0;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){.nav-links{display:none}.grid,.about{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.service:nth-child(2){border-right:0}.service:nth-child(-n+2){border-bottom:1px solid var(--line)}.contact{padding:40px 25px}section{padding:80px 0}}
+@media(max-width:520px){.services{grid-template-columns:1fr}.service{border-right:0!important;border-bottom:1px solid var(--line)!important}.service:last-child{border-bottom:0!important}.project-art{height:240px}footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="container nav-inner">
+<a class="logo" href="#">OBED<span>.</span></a>
+<div class="nav-links"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header class="hero"><div class="container reveal">
+<div class="kicker">Graphic Designer • Nepal</div>
+<h1>Ideas made <span>visual.</span></h1>
+<p>I create clean, memorable visual identities and digital designs that help brands look confident, modern and unmistakable.</p>
+<div class="btns"><a class="btn primary" href="#work">View my work</a><a class="btn" href="#contact">Let's work together</a></div>
+</div></header>
+
+<section id="work"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">Selected work</div><h2>Design that speaks.</h2></div><p>A curated showcase of branding, social media, posters and visual concepts. Replace these sample projects with your own work.</p></div>
+<div class="grid">
+<article class="project reveal"><div class="project-art one"><div class="mock">NOVA</div></div><div class="project-info"><h3>NOVA — Brand Identity</h3><p>Logo system • Visual identity • Brand direction</p></div></article>
+<article class="project reveal"><div class="project-art two"><div class="mock">01</div></div><div class="project-info"><h3>Campaign 01 — Social Design</h3><p>Instagram campaign • Creative direction • Typography</p></div></article>
+<article class="project reveal"><div class="project-art three"><div class="mock">FORM</div></div><div class="project-info"><h3>FORM — Poster Series</h3><p>Poster design • Editorial layout • Art direction</p></div></article>
+<article class="project reveal"><div class="project-art four"><div class="mock">K</div></div><div class="project-info"><h3>KAWAII — Digital Branding</h3><p>Logo • Packaging concept • Social media assets</p></div></article>
+</div></div></section>
+
+<section id="services"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">What I do</div><h2>Services.</h2></div></div>
+<div class="services reveal">
+<div class="service"><b>01 / Branding</b><p>Logos, visual identities, color systems and brand assets.</p></div>
+<div class="service"><b>02 / Social Media</b><p>Scroll-stopping posts, campaigns, thumbnails and templates.</p></div>
+<div class="service"><b>03 / Print Design</b><p>Posters, flyers, brochures, menus and promotional material.</p></div>
+<div class="service"><b>04 / Creative</b><p>Custom visual concepts built around your idea and audience.</p></div>
+</div></div></section>
+
+<section id="about"><div class="container about">
+<div class="reveal"><div class="eyebrow">About me</div><h2>Design with purpose.</h2></div>
+<div class="reveal"><p>I'm Obed, a graphic designer focused on creating simple, bold and purposeful visuals. I enjoy turning rough ideas into polished designs that communicate clearly and leave a strong impression.</p>
+<div class="facts"><div class="fact"><strong>Creative</strong><span>Concept-first thinking</span></div><div class="fact"><strong>Detail</strong><span>Clean visual execution</span></div><div class="fact"><strong>Flexible</strong><span>Digital & print design</span></div><div class="fact"><strong>Focused</strong><span>Built around your goal</span></div></div>
+<div class="skills"><span class="tag">Branding</span><span class="tag">Logo Design</span><span class="tag">Typography</span><span class="tag">Canva</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span></div></div>
+</div></section>
+
+<section id="contact"><div class="container"><div class="contact reveal">
+<div class="eyebrow">Have a project?</div><h2>Let's turn your idea into something people remember.</h2>
+<p>Available for freelance projects, collaborations and creative work.</p>
+<div class="btns"><a class="btn primary" href="mailto:your@email.com">Email me</a><a class="btn" href="https://instagram.com/" target="_blank">Instagram</a></div>
+</div></div></section>
+
+<footer class="container"><span>© 2026 OBED. All rights reserved.</span><span>Graphic Designer • Kathmandu, Nepal</span></footer>
+<script>
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
